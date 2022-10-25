@@ -1,0 +1,7 @@
+#coding=gbk
+import whisper
+
+#ÓïÒô×ªÎÄ±¾
+model = whisper.load_model("small")
+result = model.transcribe("ruyuan.mp3",language="zh")
+print(result["text"])
