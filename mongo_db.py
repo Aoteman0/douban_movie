@@ -20,6 +20,9 @@ class MyMongoClient:
     def findall(self):
         return self.mycol.find({})
 
+    #查询断点
     def find(self,tags):
         return self.mycol.find({"tags":tags})
 
+    def find_2(self,cond):
+        return self.mycol.find(cond,{'_id':0,'mid':1,'title':1}).sort('scores',-1)
